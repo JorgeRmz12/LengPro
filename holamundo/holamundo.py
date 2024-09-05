@@ -1,8 +1,8 @@
-from flask import flask
-app = flask(__name__)
+from flask import Flask
+app = Flask(__name__)
 
-@app.router('/')
-def helo_world():
+@app.route('/')
+def hello_world():
     return 'Hola Mundo Flask'
 
 if __name__ == '__main__':
