@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos</title>
+</head>
+<body>
+    <h2>Agregar nueva persona:</h2>
+        <form action="/" method="post">
+            <label>Nombre:</label>
+            <input type="text" id="nombre" name="nombre"><br><br>
+            <label>Apellido:</label>
+            <input type="text" id="apellido" name="apellido"><br><br>
+            <input type="submit" value="Agregar persona">
+        </form>
+
+        <br><br>
+
+        <div>
+            <h3>Persona:</h3>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for persona in personas %}
+                        <tr>
+                            <td>{{ persona.id }}</td>
+                            <td>{{ persona.nombre }}</td>
+                            <td>{{ persona.apellido }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+</body>
+</html>
